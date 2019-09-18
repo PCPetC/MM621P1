@@ -1,9 +1,25 @@
-//Happy and Joyful Children by Free Music | https://soundcloud.com/fm_freemusic
-//Music promoted by https://www.free-stock-music.com
-//Creative Commons Attribution 3.0 Unported License
-//https://creativecommons.org/licenses/by/3.0/deed.en_US
 
-var xloc;
+// Requirements
+
+// On click there should be confetti explosion
+// On swipe right: explosion to right
+// On swipe left: explosion to left
+// On two-finger tap: two explosions
+// Explosion:
+//   Confetti displayed in multiple directions from initial position
+//   Will remain on screen after moving 200 units
+// Confetti: Square, random size and color
+//   Size: 25 to 50
+
+// Notes
+// Declaration: When you say => var xloc;
+// Definition: When you assign a value to a variable => xloc = 5;
+// Initialization: When you define a variable for the first time
+
+// In JavaScript, if you declare a variable and don't define it,
+// the value undefined is automatically assigned
+
+var xloc; // xloc = undefined
 var yloc;
 var intX;
 var intY;
@@ -16,6 +32,8 @@ var xloc4;
 var yloc4;
 var xloc5;
 var yloc5;
+
+
 var xloc6;
 var yloc6;
 var xloc7;
@@ -23,16 +41,8 @@ var yloc7;
 var xloc8;
 var yloc8;
 
-var introTime = 60 * 5;
-var introExitTime = 60 * 15;
-var myImg;
-let song;
+var button;
 
-function preload() {
-   	myImg = loadImage('assets/bee.jpg');
-    myImg2 = loadImage('assets/baseball.png');
-    song = loadSound('assets/song.mp3');
-}
 
 function setup() {
   // put setup code here
@@ -41,22 +51,11 @@ function setup() {
   noStroke();
   fill(255,0,0);
   rectMode(CENTER);
-  imageMode(CENTER);
-	image(myImg,300,300,600,600);
-  song.loop();
+
+
+
 }
-
 function draw() {
-
-  if (frameCount < introTime)  {
-  	  return;
-  } if (frameCount === introTime) {
-    image(myImg2,300,300,600,600);
-  }
-  else if (frameCount === introExitTime) {
-    background(70,165,211);
-  }
-
 
   // check if xloc and yloc are defined before incrementing
   // they won't be defined until the mouse is clicked
@@ -70,42 +69,42 @@ function draw() {
     rect(xloc, yloc, random(10,25), random(10,25));
   }
 
-  if (xloc2 && yloc2 && xloc2 < intX + 100 && (keyCode === RIGHT_ARROW || keyCode === UP_ARROW)) {
+    if (xloc2 && yloc2 && xloc2 < intX + 100 && (keyCode === RIGHT_ARROW || keyCode === UP_ARROW)) {
     xloc2++;
     yloc2--;
     fill(random(255),random(255),random(255));
     rect(xloc2, yloc2, random(10,25), random(10,25));
   }
 
-  if (xloc3 && yloc3 && xloc3 < intX + 100 && (keyCode === RIGHT_ARROW || keyCode === UP_ARROW)) {
+    if (xloc3 && yloc3 && xloc3 < intX + 100 && (keyCode === RIGHT_ARROW || keyCode === UP_ARROW)) {
     xloc3++;
 
     fill(random(255),random(255),random(255));
     rect(xloc3, yloc3, random(10,25), random(10,25));
   }
 
-  if (xloc4 && yloc4 && yloc4 > intY - 100 && (keyCode === RIGHT_ARROW || keyCode === LEFT_ARROW || keyCode === UP_ARROW)) {
+    if (xloc4 && yloc4 && yloc4 > intY - 100 && (keyCode === RIGHT_ARROW || keyCode === LEFT_ARROW || keyCode === UP_ARROW)) {
     yloc4--;
 
     fill(random(255),random(255),random(255));
     rect(xloc4, yloc4, random(10,25), random(10,25));
   }
 
-  if (xloc5 && yloc5 && yloc5 < intY + 100 && (keyCode === RIGHT_ARROW || keyCode === LEFT_ARROW || keyCode === UP_ARROW)) {
+    if (xloc5 && yloc5 && yloc5 < intY + 100 && (keyCode === RIGHT_ARROW || keyCode === LEFT_ARROW || keyCode === UP_ARROW)) {
     yloc5++;
 
     fill(random(255),random(255),random(255));
     rect(xloc5, yloc5, random(10,25), random(10,25));
   }
 
-  if (xloc6 && yloc6 && xloc6 > intX - 100 && (keyCode === LEFT_ARROW || keyCode === UP_ARROW)) {
+    if (xloc6 && yloc6 && xloc6 > intX - 100 && (keyCode === LEFT_ARROW || keyCode === UP_ARROW)) {
     xloc6--;
 
     fill(random(255),random(255),random(255));
     rect(xloc6, yloc6, random(10,25), random(10,25));
   }
 
-  if (xloc7 && yloc7 && yloc7 < intY + 100 && (keyCode === LEFT_ARROW || keyCode === UP_ARROW)) {
+    if (xloc7 && yloc7 && yloc7 < intY + 100 && (keyCode === LEFT_ARROW || keyCode === UP_ARROW)) {
     yloc7++;
     xloc7--;
 
@@ -113,7 +112,7 @@ function draw() {
     rect(xloc7, yloc7, random(10,25), random(10,25));
   }
 
-  if (xloc8 && yloc8 && yloc8 > intY - 100 && (keyCode === LEFT_ARROW || keyCode === UP_ARROW)) {
+    if (xloc8 && yloc8 && yloc8 > intY - 100 && (keyCode === LEFT_ARROW || keyCode === UP_ARROW)) {
     yloc8--;
     xloc8--;
 
@@ -131,14 +130,12 @@ function mouseClicked() {
   return false;
 }
 
+
+
 function keyPressed() {
-  var SPACEBAR = 32
-  if (keyCode === SPACEBAR) {
+  if (keyCode === SHIFT) {
    background(70,165,211);
   }
-}
 
-//Happy and Joyful Children by Free Music | https://soundcloud.com/fm_freemusic
-//Music promoted by https://www.free-stock-music.com
-//Creative Commons Attribution 3.0 Unported License
-//https://creativecommons.org/licenses/by/3.0/deed.en_US
+
+}
