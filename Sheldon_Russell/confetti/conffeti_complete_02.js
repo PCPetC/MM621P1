@@ -3,11 +3,11 @@
 //Creative Commons Attribution 3.0 Unported License
 //https://creativecommons.org/licenses/by/3.0/deed.en_US
 
-var xloc;
-var yloc;
 var intX;
 var intY;
 
+var xloc1;
+var yloc1;
 var xloc2;
 var yloc2;
 var xloc3;
@@ -25,12 +25,13 @@ var yloc8;
 
 var introTime = 60 * 5;
 var introExitTime = 60 * 15;
-var myImg;
+var introImg;
+var instructImg;
 let song;
 
 function preload() {
-   	myImg = loadImage('assets/bee.jpg');
-    myImg2 = loadImage('assets/baseball.png');
+   	introImg = loadImage('assets/bee.jpg');
+    instructImg = loadImage('assets/baseball.png');
     song = loadSound('assets/song.mp3');
 }
 
@@ -42,7 +43,7 @@ function setup() {
   fill(255,0,0);
   rectMode(CENTER);
   imageMode(CENTER);
-	image(myImg,300,300,600,600);
+	image(introImg,300,300,600,600);
   song.loop();
 }
 
@@ -51,7 +52,7 @@ function draw() {
   if (frameCount < introTime)  {
   	  return;
   } if (frameCount === introTime) {
-    image(myImg2,300,300,600,600);
+    image(instructImg,300,300,600,600);
   }
   else if (frameCount === introExitTime) {
     background(70,165,211);
@@ -61,13 +62,13 @@ function draw() {
   // check if xloc and yloc are defined before incrementing
   // they won't be defined until the mouse is clicked
 
-  if (xloc && yloc && xloc < intX + 100 && (keyCode === RIGHT_ARROW || keyCode === UP_ARROW)) {
+  if (xloc1 && yloc1 && xloc1 < intX + 100 && (keyCode === RIGHT_ARROW || keyCode === UP_ARROW)) {
     //background(100);
-    xloc++;
-    yloc++;
+    xloc1++;
+    yloc1++;
 
     fill(random(255),random(255),random(255));
-    rect(xloc, yloc, random(10,25), random(10,25));
+    rect(xloc1, yloc1, random(10,25), random(10,25));
   }
 
   if (xloc2 && yloc2 && xloc2 < intX + 100 && (keyCode === RIGHT_ARROW || keyCode === UP_ARROW)) {
@@ -124,8 +125,8 @@ function draw() {
 }
 
 function mouseClicked() {
-  xloc = intX = xloc2 = xloc3 = xloc4 = xloc5 = xloc6 = xloc7 = xloc8 = mouseX;
-  yloc = intY = yloc2 = yloc3 = yloc4 = yloc5 = yloc6 = yloc7 = yloc8= mouseY;
+  xloc1 = intX = xloc2 = xloc3 = xloc4 = xloc5 = xloc6 = xloc7 = xloc8 = mouseX;
+  yloc1 = intY = yloc2 = yloc3 = yloc4 = yloc5 = yloc6 = yloc7 = yloc8= mouseY;
 
   // prevent default
   return false;
