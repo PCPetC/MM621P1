@@ -29,6 +29,8 @@ var introImg;
 var instructImg;
 let song;
 
+var SPACEBAR;
+
 var timer = 0;
 var loadingDots = 'Loading';
 var loading = true;
