@@ -62,7 +62,7 @@ function draw() {
   // check if xloc and yloc are defined before incrementing
   // they won't be defined until the mouse is clicked
 
-  if (xloc1 && yloc1 && xloc1 < intX + 100 && (keyCode === RIGHT_ARROW || keyCode === UP_ARROW)) {
+  if (xloc1 && yloc1 && xloc1 < intX + 100 && (keyCode === 68 || keyCode === 87)) {
     //background(100);
     xloc1++;
     yloc1++;
@@ -71,42 +71,42 @@ function draw() {
     rect(xloc1, yloc1, random(10,25), random(10,25));
   }
 
-  if (xloc2 && yloc2 && xloc2 < intX + 100 && (keyCode === RIGHT_ARROW || keyCode === UP_ARROW)) {
+  if (xloc2 && yloc2 && xloc2 < intX + 100 && (keyCode === 68 || keyCode === 87)) {
     xloc2++;
     yloc2--;
     fill(random(255),random(255),random(255));
     rect(xloc2, yloc2, random(10,25), random(10,25));
   }
 
-  if (xloc3 && yloc3 && xloc3 < intX + 100 && (keyCode === RIGHT_ARROW || keyCode === UP_ARROW)) {
+  if (xloc3 && yloc3 && xloc3 < intX + 100 && (keyCode === 68 || keyCode === 87)) {
     xloc3++;
 
     fill(random(255),random(255),random(255));
     rect(xloc3, yloc3, random(10,25), random(10,25));
   }
 
-  if (xloc4 && yloc4 && yloc4 > intY - 100 && (keyCode === RIGHT_ARROW || keyCode === LEFT_ARROW || keyCode === UP_ARROW)) {
+  if (xloc4 && yloc4 && yloc4 > intY - 100 && (keyCode === 68 || keyCode === 65 || keyCode === 87)) {
     yloc4--;
 
     fill(random(255),random(255),random(255));
     rect(xloc4, yloc4, random(10,25), random(10,25));
   }
 
-  if (xloc5 && yloc5 && yloc5 < intY + 100 && (keyCode === RIGHT_ARROW || keyCode === LEFT_ARROW || keyCode === UP_ARROW)) {
+  if (xloc5 && yloc5 && yloc5 < intY + 100 && (keyCode === 68 || keyCode === 65 || keyCode === 87)) {
     yloc5++;
 
     fill(random(255),random(255),random(255));
     rect(xloc5, yloc5, random(10,25), random(10,25));
   }
 
-  if (xloc6 && yloc6 && xloc6 > intX - 100 && (keyCode === LEFT_ARROW || keyCode === UP_ARROW)) {
+  if (xloc6 && yloc6 && xloc6 > intX - 100 && (keyCode === 65 || keyCode === 87)) {
     xloc6--;
 
     fill(random(255),random(255),random(255));
     rect(xloc6, yloc6, random(10,25), random(10,25));
   }
 
-  if (xloc7 && yloc7 && yloc7 < intY + 100 && (keyCode === LEFT_ARROW || keyCode === UP_ARROW)) {
+  if (xloc7 && yloc7 && yloc7 < intY + 100 && (keyCode === 65 || keyCode === 87)) {
     yloc7++;
     xloc7--;
 
@@ -114,7 +114,7 @@ function draw() {
     rect(xloc7, yloc7, random(10,25), random(10,25));
   }
 
-  if (xloc8 && yloc8 && yloc8 > intY - 100 && (keyCode === LEFT_ARROW || keyCode === UP_ARROW)) {
+  if (xloc8 && yloc8 && yloc8 > intY - 100 && (keyCode === 65 || keyCode === 87)) {
     yloc8--;
     xloc8--;
 
