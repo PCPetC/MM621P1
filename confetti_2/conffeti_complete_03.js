@@ -40,8 +40,7 @@ var loading = true;
 var myFont;
 
 function preload() {
-   	introImg = loadImage('assets/confetti_collage_3.png');
-    instructImg = loadImage('assets/baseball.png');
+   	introImg = loadImage('assets/confetti_collage_5.png');
     song = loadSound('assets/song.mp3');
     myFont = loadFont('assets/Chango-Regular.ttf');
 }
@@ -132,9 +131,10 @@ function draw() {
       text('Instructions', width*0.2, height/2 - 250);
       fill(130);
       textSize(50);
-      text('"WASD" Keys for direction', width*0.2+50, height/2 - 150);
+      text('"WAD" Keys for bursts', width*0.2+50, height/2 - 150);
       text('"LEFT CLICK" to create', width*0.2+50, height/2 - 75);
-      text('"SPACEBAR" to reset', width*0.2+50, height/2 );
+      text('Other Keys to stop', width*0.2+50, height/2);
+      text('"SPACEBAR" to reset', width*0.2+50, height/2+75 );
       // textAlign(LEFT, CENTER);
       // line(450,0,450, height)
       textAlign(CENTER, CENTER);
