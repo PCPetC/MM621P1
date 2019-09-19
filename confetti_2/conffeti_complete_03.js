@@ -31,10 +31,11 @@ let song;
 
 var SPACEBAR;
 
+//loading variables
 var timer = 0;
 var loadingDots = 'Loading';
 var loading = true;
-// var secs = second();
+
 
 var myFont;
 
@@ -81,7 +82,7 @@ function draw() {
 
 
 
-//first 5 seconds
+//first 5 seconds, loading
   if (frameCount < introTime && loading === true)  {
       background(250);
       image(introImg,width/2,height/2,600,600);
@@ -116,15 +117,11 @@ function draw() {
         } else if (timer > 15){
           return 0;
         }
-        // fill(250);
-        // fill(200);
-        // text(loadingDots, width*0.8, height*0.8);
-        // fill(250);
-        // rect(width*0.8, height*0.8,300,100);
+
 
   	  return;
 
-      //15 seconds
+      //5-15 seconds, instructions
   } if (frameCount > introTime && frameCount < introExitTime && loading === true) {
       background(250);
       fill(130,130,190);
@@ -150,12 +147,12 @@ function draw() {
         timer ++;
         loadingDots = loadingDots + '.';
 
-        // background(250);
+
       }
       if (timer > 3 && timer < 15) {
         timer = 0;
         loadingDots = 'Loading';
-        // background(250);
+
       }
       else if (timer > 15){
         return 0;
