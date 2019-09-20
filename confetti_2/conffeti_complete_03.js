@@ -3,6 +3,15 @@
 //Creative Commons Attribution 3.0 Unported License
 //https://creativecommons.org/licenses/by/3.0/deed.en_US
 
+/*
+Peter Chang, Sheldon Russell
+Project 1
+CSUEB FA2019
+MM621: Screen Based Interaction
+Instructor: Gwyan Rhabyt
+9-19-2019
+*/
+
 var intX;
 var intY;
 
@@ -23,8 +32,8 @@ var yloc7;
 var xloc8;
 var yloc8;
 
-var introTime = 60 * 5;
-var introExitTime = 60 * 15;
+var introTime = 60 * 10;
+var introExitTime = 60 * 20;
 var introImg;
 var instructImg;
 let song;
@@ -81,7 +90,7 @@ function draw() {
 
 
 
-//first 5 seconds, loading
+//first 10 seconds, loading
   if (frameCount < introTime && loading === true)  {
       background(250);
       image(introImg,width/2,height/2,600,600);
@@ -91,6 +100,7 @@ function draw() {
       textAlign(LEFT, CENTER);
       textSize(25);
       // line(76,0,76, height)
+      text('Peter Chang & Sheldon Russell', width*0.1, height*0.8 - 160);
       text('Project 01', width*0.1, height*0.8 - 120);
       text('CSUEB FA2019', width*0.1, height*0.8 - 80);
       text('MM621: Screen Based Interaction', width*0.1, height*0.8 - 40);
@@ -103,24 +113,24 @@ function draw() {
       text(loadingDots, width*0.8, height*0.8);
 
       fill(250);
-      if (frameCount % 60 == 0 && timer<15) { // if the frameCount is divisible by 60, then a second has passed. it will stop at 0
+      if (frameCount % 60 == 0 && timer<20) { // if the frameCount is divisible by 60, then a second has passed. it will stop at 0
           timer ++;
           loadingDots = loadingDots + '.';
 
 
         }
-        if (timer > 3 && timer < 15) {
+        if (timer > 3 && timer < 20) {
           timer = 0;
           loadingDots = 'Loading';
 
-        } else if (timer > 15){
+        } else if (timer > 20){
           return 0;
         }
 
 
   	  return;
 
-      //5-15 seconds, instructions
+      //10-20 frame time in seconds, instructions
   } if (frameCount > introTime && frameCount < introExitTime && loading === true) {
       background(250);
       fill(130,130,190);
@@ -131,9 +141,9 @@ function draw() {
       text('Instructions', width*0.2, height/2 - 250);
       fill(130);
       textSize(50);
-      text('"WAD" Keys for bursts', width*0.2+50, height/2 - 150);
+      text('"W, A, D" Keys for bursts', width*0.2+50, height/2 - 150);
       text('"LEFT CLICK" to create', width*0.2+50, height/2 - 75);
-      text('Other Keys to stop', width*0.2+50, height/2);
+      text('Other Keys to stop', width*0.2+75, height/2);
       text('"SPACEBAR" to reset', width*0.2+50, height/2+75 );
       // textAlign(LEFT, CENTER);
       // line(450,0,450, height)
@@ -143,18 +153,18 @@ function draw() {
      text(loadingDots, width*0.8, height*0.8);
 
     fill(250);
-    if (frameCount % 60 == 0 && timer<15) { // if the frameCount is divisible by 60, then a second has passed. it will stop at 0
+    if (frameCount % 60 == 0 && timer<20) { // if the frameCount is divisible by 60, then a second has passed. it will stop at 0
         timer ++;
         loadingDots = loadingDots + '.';
 
 
       }
-      if (timer > 3 && timer < 15) {
+      if (timer > 3 && timer < 20) {
         timer = 0;
         loadingDots = 'Loading';
 
       }
-      else if (timer > 15){
+      else if (timer > 20){
         return 0;
       }
   }
@@ -244,8 +254,3 @@ function keyPressed() {
    background(250);
   }
 }
-
-//Happy and Joyful Children by Free Music | https://soundcloud.com/fm_freemusic
-//Music promoted by https://www.free-stock-music.com
-//Creative Commons Attribution 3.0 Unported License
-//https://creativecommons.org/licenses/by/3.0/deed.en_US
